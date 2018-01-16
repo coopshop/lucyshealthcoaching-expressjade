@@ -10,10 +10,15 @@ var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+/**
+ * View engine setup
+ */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+/**
+ * Express-defined middlewares
+ */
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -22,6 +27,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * Custom middleware
+ */
 // Redirect the original WordPress ".html" pages to modern routes, preserving
 //  the query string.
 app.use(function(req, res, next) {
@@ -38,17 +46,23 @@ app.use(function(req, res, next) {
 
 });
 
+/**
+ * Routes
+ */
 app.use('/', index);
-app.use('/users', users);
 
-// catch 404 and forward to error handler
+/**
+ * Catch-all to 404
+ */
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-// error handler
+/**
+ * Error handler
+ */
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
