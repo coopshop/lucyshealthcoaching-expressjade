@@ -1,7 +1,86 @@
-doctype html
+- var pageTitle = pageTitle || "Lucy's Health Coaching"
+doctype
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='google-site-verification', content='3ERgv6hzQ-x4V6t58qj1h3357k5tBHN1EO3-JgAlJrM')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title #{pageTitle}
+    meta(name='keywords', content='lucy chen, health coach, lucy, chen, health, coach, brooklyn, new york city, new york, nyc, nutrition, nutritionalist, recipes, food, cooking, cook book, book, help, self help')
+    meta(name='description', content='Lucy Chen is a Certified Holistic Health Coach and also holds a B.S. in Community Health Education with concentrations in Nutrition and Psychology. She further received training from the Institute for Integrative Nutrition, where she was trained in more than one hundred dietary theories, and studied a variety of practical lifestyle coaching methods. Her lifelong struggles with her own health and body image has helped her create a judgement-free way of helping others who are also looking to empower themselves through a healthy lifestyle.')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0, user-scalable=0')
+    link(href='assets/css/lucy-style.css', rel='stylesheet', type='text/css')
+    link(rel='icon', type='image/png', href='assets/img/logo.png')
+
+    // JQuery dependency
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+
+    // Social Media icon(s)
+    script(src='https://use.fortawesome.com/0a82b06a.js')
+
+    // Fixed nav on scroll
+    script(type='text/javascript').  		
+      var navigation, wrapper, yPos;
+      function yScroll () {
+        navigation = document.getElementById ('navigation');
+        wrapper = document.getElementById ('wrapper');
+        yPos = window.pageYOffset;
+        if (yPos > 425) {
+          navigation.style.position = 'fixed';
+          navigation.style.top = '0px';
+          navigation.style.padding = '5px';
+          wrapper.style.paddingTop = '60px';
+        } else {
+          navigation.style.position = 'static';
+          navigation.style.padding ='10px';
+          wrapper.style.paddingTop = '10px';
+        }
+      }
+      window.addEventListener("scroll", yScroll);
+
   body
-    block content
+    .container
+      // --------------- HEADER / NAVIGATION ---------------
+      .header
+        img#logo(src='assets/img/logo.png')
+        #navigation
+          ul
+            li
+              a(href='index.html') Home
+            li
+              a(href='about.html') About
+            li
+              a(href='work.html') Work with Me
+            li
+              a(href='recipes.html') Recipes
+            li
+              a(href='praise.html') Praise
+            li
+              a(href='media.html') Media
+            li
+              a(href='contact.html') Contact
+            li
+              a(href='blog.php') Blog
+      // --------------- CONTENT ---------------
+      .content
+        #wrapper
+          h3(align='center')
+            | When was the last time you recieved
+            br
+            |                 the personal attention you deserve and talked
+            br
+            |                 with someone about your health?
+            br
+            br
+          h3(align='center')
+            a.button(href='contact.html') Start The Conversation
+      // --------------- FOOTER ---------------
+      .footer
+        .footer-links
+          .foot-note
+            // INSERT NEWSLETTER SIGN-UP HERE
+            a.lc.lc-social-facebook(target='_blank', href='https://www.facebook.com/lucyshealthcoaching')
+            a.lc.lc-social-instagram(target='_blank', href='https://www.instagram.com/lucydevours/')
+            a.lc.lc-social-yelp(target='_blank', href='http://nz.yelp.com/biz/lucys-health-coaching-brooklyn')
+            a.lc.lc-gmail(target='_blank', href='mailto:lucyhealthcoach@gmail.com')
+        .copyright
+          | © 2016 Lucy Chen
