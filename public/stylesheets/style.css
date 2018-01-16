@@ -57,7 +57,7 @@ a:hover {
 /**************************** HEADER / NAVIGATION ****************************/
 
 .header {
-  background: url(../img/header.jpg) no-repeat center center fixed;
+  background: url(../images/header.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -554,7 +554,7 @@ form span {
 
 @media screen and (max-width: 1024px) {
   .header {
-    background: url(../img/header.jpg) no-repeat;
+    background: url(../images/header.jpg) no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
