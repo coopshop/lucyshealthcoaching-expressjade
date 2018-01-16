@@ -11,6 +11,12 @@ router.get('/about', function(req, res, next) {
   res.render('about');
 });
 
+/* GET Praise page */
+
+router.get('/praise', function(req, res, next) {
+  res.render('praise');
+});
+
 /* GET Recipes page */
 router.get('/recipes', function(req, res, next) {
   res.render('recipes');
