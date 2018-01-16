@@ -1,0 +1,296 @@
+extends layout
+
+block content
+  h3 Form: Men's Health History
+  |             Fill out and submit the form below or 
+  a(href='assets/pdf/2_health_history_men.pdf')
+    i.lc.lc-download
+    |  download as a .PDF
+  //- CONTACT FORM
+  form(action='https://formspree.io/lucyhealthcoach@gmail.com', method='POST')
+    //- PERSONAL INFORMATION
+    fieldset
+      legend
+        span(style='color: #F30; font-size: 20px;')
+          strong Personal Information
+      .contact-info-group
+        label
+          span First Name:
+          input(type='text', name='First Name: ')
+        label
+          span Last Name:
+          input(type='text', name='Last Name: ')
+        label
+          span Email:
+          input(type='email', name='_replyto')
+        label
+          span How often do you check email?
+          input(type='text', name='How often do you check email? ', placeholder='Often, Sometimes, Never, etc.')
+      .short_input_box
+        label
+          span Phone Number:
+          input(type='text', name='Phone Number: ', placeholder='XXX-XXX-XXXX')
+      .radio_button_style
+        label.radio.inline
+          input(type='radio', name='Phone Number: ', value='Home', checked='')
+          span Home 
+        label.radio.inline
+          input(type='radio', name='Phone Number: ', value='Work')
+          span Work 
+        label.radio.inline
+          input(type='radio', name='Phone Number: ', value='Mobile')
+          span Mobile 
+      .contact-info-group
+        label
+          span Age:
+          input(type='text', name='Age: ')
+        label
+          span Height:
+          input(type='text', name='Height: ')
+        label
+          span Birthdate:
+          input(type='text', name='Birthdate: ', placeholder='mm/dd/yyyy')
+        label
+          span Place of birth:
+          input(type='text', name='Place of birth: ', placeholder='eg: New York City, NY')
+      .short_input_box
+        label
+          span Current Weight:
+          input(type='text', name='Current Weight: ')
+        label
+          span Weight 6 Months Ago:
+          input(type='text', name='Weight 6 Months Ago: ')
+        label
+          span Weight 1 Year Ago:
+          input(type='text', name='Weight 1 Year Ago: ')
+        label
+          span Would you like your weight to be different?
+        .radio_button_style
+          label.radio.inline
+            input(type='radio', name='Would you like your weight to be different? ', value='Yes')
+            span Yes 
+          label.radio.inline
+            input(type='radio', name='Would you like your weight to be different? ', value='No')
+            span No 
+        label
+          span If so, what?
+          input(name='Would you like your weight to be different? ')
+    //- SOCIAL INFORMATION
+    fieldset
+      legend
+        span(style='color: #F30; font-size: 20px;')
+          strong Social Information
+      .contact-info-group
+        label
+          span Relationship Status:
+          input(type='text', name='Relationship Status: ', placeholder='Single, Married, Divorced, etc.')
+        label
+          span Where do you currently live?
+          input(type='text', name='Where do you currently live? ', placeholder='eg: Las Vegas, NV')
+      .short_input_box
+        label
+          span Children?
+        .radio_button_style
+          label.radio.inline
+            input(type='radio', name='Children? ', value='Yes')
+            span Yes 
+          label.radio.inline
+            input(type='radio', name='Children? ', value='No')
+            span No 
+        label
+          span If so, how many?
+          input(name='Children? ')
+      .short_input_box
+        label
+          span Pets?
+        .radio_button_style
+          label.radio.inline
+            input(type='radio', name='Pets? ', value='Yes')
+            span Yes 
+          label.radio.inline
+            input(type='radio', name='Pets? ', value='No')
+            span No 
+      .contact-info-group
+        label
+          span Occupation:
+          input(type='text', name='Occupation: ')
+        label
+          span Hours of work per week?
+          input(type='text', name='Hours of work per week? ')
+    //- HEALTH INFORMATION
+    fieldset
+      legend
+        span(style='color: #F30; font-size: 20px;')
+          strong Health Information
+      label
+        span Please list your main health concerns:
+        textarea.short_textarea(name='Please list your main health concerns: ')
+      label
+        span Other concerns and/or goals?
+        textarea.short_textarea(name='Other concerns and/or goals? ')
+      label
+        span At what point in your life did you feel best?
+        textarea.short_textarea(name='At what point in your life did you feel best? ')
+      label
+        span Any serious illnesses/hospitalizations/injuries?
+        textarea.short_textarea(name='Any serious illnesses/hospitalizations/injuries? ')
+      .contact-info-group
+        label
+          span How is/was the health of your mother?
+          input(type='text', name='How is/was the health of your mother? ')
+        label
+          span How is/was the health of your father?
+          input(type='text', name='How is/was the health of your father? ')
+        label
+          span What is your ancestry?
+          input(type='text', name='What is your ancestry? ')
+        label
+          span What is your blood type?
+          input(type='text', name='What is your blood type? ')
+      .contact-info-group
+        label
+          span How is your sleep?
+          input(type='text', name='How is your sleep? ')
+        label
+          span How many hours?
+          input(type='text', name='How many hours? ')
+      label
+        span Do you wake up throughout the night?
+      .radio_button_style
+        label.radio.inline
+          input(type='radio', name='Do you wake up at night? ', value='Yes')
+          span Yes 
+        label.radio.inline
+          input(type='radio', name='Do you wake up at night? ', value='No')
+          span No 
+      label
+        span If so, explain:
+        textarea.short_textarea(name='Do you wake up at night? ')
+      label
+        span Any pain, stiffness, or swelling?
+        textarea.short_textarea(name='Any pain, stiffness, or swelling? ')
+      label
+        span Constipation, Diarrhea, or Gas?
+        textarea.short_textarea(name='Constipation, Diarrhea, or Gas? ')
+      label
+        span Allergies or Sensitivities?
+        textarea.short_textarea(name='Allergies or Sensitivities? ')
+    //- MEDICAL INFORMATION
+    fieldset
+      legend
+        span(style='color: #F30; font-size: 20px;')
+          strong Medical Information
+      label
+        span Do you take any supplements or medications?
+      .radio_button_style
+        label.radio.inline
+          input(type='radio', name='Do you take any supplements or medications? ', value='Yes')
+          span Yes 
+        label.radio.inline
+          input(type='radio', name='Do you take any supplements or medications? ', value='No')
+          span No 
+      label
+        span If yes, please list:
+        textarea.short_textarea(name='Do you take any supplements or medications? ')
+      label
+        span Any healers, helpers, or therapies with which you are involved?
+      .radio_button_style
+        label.radio.inline
+          input(type='radio', name='Any healers, helpers, or therapies with which you are involved? ', value='Yes')
+          span Yes 
+        label.radio.inline
+          input(type='radio', name='Any healers, helpers, or therapies with which you are involved? ', value='No')
+          span No 
+      label
+        span If yes, please list:
+        textarea.short_textarea(name='Any healers, helpers, or therapies with which you are involved? ')
+      label
+        span What role do sports and exercise play in your life?
+        textarea.short_textarea(name='What role do sports and exercise play in your life? ')
+    //- FOOD INFORMATION
+    fieldset
+      legend
+        span(style='color: #F30; font-size: 20px;')
+          strong Food Information
+      label
+        span What foods did you eat often as a child?
+      .contact-info-group
+        label
+          span Breakfast:
+          input(type='text', name='Childhood Breakfast: ')
+        label
+          span Lunch:
+          input(type='text', name='Childhood Lunch: ')
+        label
+          span Dinner:
+          input(type='text', name='Childhood Dinner: ')
+        label
+          span Snacks:
+          input(type='text', name='Childhood Snacks: ')
+        label
+          span Liquids:
+          input(type='text', name='Childhood Liquids: ')
+      label
+        span What is your food like these days?
+      .contact-info-group
+        label
+          span Breakfast:
+          input(type='text', name='Current Breakfast: ')
+        label
+          span Lunch:
+          input(type='text', name='Current Lunch: ')
+        label
+          span Dinner:
+          input(type='text', name='Current Dinner: ')
+        label
+          span Snacks:
+          input(type='text', name='Current Snacks: ')
+        label
+          span Liquids:
+          input(type='text', name='Current Liquids: ')
+      label
+        span
+          | Will family and/or friends be supportive of your desire to make food and/or lifestyle changes?
+      .radio_button_style
+        label.radio.inline
+          input(type='radio', name='Will family and/or friends be supportive of your desire to make food and/or lifestyle changes? ', value='Yes')
+          span Yes 
+        label.radio.inline
+          input(type='radio', name='Will family and/or friends be supportive of your desire to make food and/or lifestyle changes? ', value='No')
+          span No 
+      label
+        span Do you cook?
+      .radio_button_style
+        label.radio.inline
+          input(type='radio', name='Do you cook? ', value='Yes')
+          span Yes 
+        label.radio.inline
+          input(type='radio', name='Do you cook? ', value='No')
+          span No 
+      .contact-info-group
+        label
+          span What percentage of your food is home-cooked?
+          input(type='text', name='What percentage of your food is home-cooked? ')
+        label
+          span Where do you get the rest from?
+          input(type='text', name='Where do you get the rest from? ')
+      label
+        span Do you crave sugar, coffee, cigarettes, or have any major addictions?
+        textarea.short_textarea(name='Do you crave sugar, coffee, cigarettes, or have any major addictions? ')
+      label
+        span The most important thing I should do to improve my health is:
+        textarea.short_textarea(name='The most important thing I should do to improve my health is: ')
+    //- ADDITIONAL INFORMATION
+    fieldset
+      legend
+        span(style='color: #F30; font-size: 20px;')
+          strong Additional Information
+      label
+        span Anything else you would like to share?
+        textarea(name='Anything else you would like to share? ')
+    //- SUBMIT BUTTON
+    .submit-wrap
+      input.button(type='submit', value='Send')
+    input(type='hidden', name='_subject', value="Form Submission: Men's Health History")
+    input(type='hidden', name='_next', value='thanks.html')
+  //- END CONTACT FORM

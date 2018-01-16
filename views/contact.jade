@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h3(align='center') Ready to start the journey towards a healthier and happier you?
+  //- CONTACT FORM
+  form.contact-form(action='https://formspree.io/lucyhealthcoach@gmail.com', method='POST')
+    .contact-info-group
+      label
+        span First Name:
+        input(type='text', name='First Name: ')
+      label
+        span Last Name:
+        input(type='text', name='Last Name: ')
+    label
+      span Email:
+      input(type='email', name='_replyto')
+    label
+      span Talk to me. I'll help you answer any questions you may have.
+      textarea(name='message')
+    .submit-wrap
+      input.button(type='submit', value='Send')
+    input(type='hidden', name='_subject', value='General Contact Form Submission')
+    input(type='hidden', name='_next', value='thanks.html')
+  //- END CONTACT FORM
+  h3(align='center') Health Forms
+  p(align='center')
+    strong Fill out and submit a Health History Form below.
+  div(align='center')
+    .form_links
+      ol
+        li
+          a(href='mens-health-history-form.html') Men's Health History Form
+    .form_links
+      ol
+        li
+          a(href='womens-health-history-form.html') Women's Health History Form
+    .form_links
+      ol
+        li
+          a(href='gender_neutral-health-history-form.html') Gender Neutral Health History Form
