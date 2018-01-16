@@ -11,31 +11,15 @@ html
     link(href='assets/css/lucy-style.css', rel='stylesheet', type='text/css')
     link(rel='icon', type='image/png', href='assets/img/logo.png')
 
-    // JQuery dependency
+    //- JQuery dependency
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
 
-    // Social Media icon(s)
+    //- Social Media icon(s)
     script(src='https://use.fortawesome.com/0a82b06a.js')
 
-    // Fixed nav on scroll
-    script(type='text/javascript').  		
-      var navigation, wrapper, yPos;
-      function yScroll () {
-        navigation = document.getElementById ('navigation');
-        wrapper = document.getElementById ('wrapper');
-        yPos = window.pageYOffset;
-        if (yPos > 425) {
-          navigation.style.position = 'fixed';
-          navigation.style.top = '0px';
-          navigation.style.padding = '5px';
-          wrapper.style.paddingTop = '60px';
-        } else {
-          navigation.style.position = 'static';
-          navigation.style.padding ='10px';
-          wrapper.style.paddingTop = '10px';
-        }
-      }
-      window.addEventListener("scroll", yScroll);
+    //- Local JS, converted from static WordPress site
+    script(type='text/javascript' src='javascripts/fixNavOnScroll.js')
+    script(type='text/javascript' src='javascripts/moreLessToggle.js')
 
   body
     .container
