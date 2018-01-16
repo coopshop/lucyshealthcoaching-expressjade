@@ -22,6 +22,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Redirect the original WordPress ".html" pages to modern routes, preserving
+//  the query string.
+app.use(function(req, res, next) {
+
+  if (req.path.length < 6) {
+    return next();
+  }
+
+  if (req.path.slice(-5) === '.html') {
+    res.redirect(301, req.path.slice(0, -5) + req.url.slice(req.path.length));
+  } else {
+    next();
+  }
+
+});
+
 app.use('/', index);
 app.use('/users', users);
 
